@@ -31,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
         include('views/menu.php');
         ?>
     <div>
-        <input type="checkbox" class="checkbox" id="chk" /> 
+        <input type="checkbox" class="checkbox" id="chk"/> 
         <label class="labelo" for="chk">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
