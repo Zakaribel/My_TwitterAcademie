@@ -1,5 +1,11 @@
 <?php
+<<<<<<< HEAD
 include('connect/functions.php');
+=======
+
+include('connect/functions.php');
+
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('location:/views/login.php');
@@ -7,23 +13,44 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <html>
 
+<<<<<<< HEAD
+=======
+if (!isset($_SESSION['user_id'])) {
+    header('location:/views/login.php');
+}
+
+?>
+
+<html>
+
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
 <head>
     <title>Twitter</title>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/dark.css">
+=======
+	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/dark.css">
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
     <div class="container">
         <?php
         include('views/menu.php');
         ?>
+<<<<<<< HEAD
         <div>
             <input type="checkbox" class="checkbox" id="chk" />
             <label class="labelo" for="chk">
@@ -32,6 +59,17 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="ball"></div>
             </label>
         </div>
+=======
+    <div>
+        <input type="checkbox" class="checkbox" id="chk" /> 
+        <label class="labelo" for="chk">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+    
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
@@ -64,6 +102,10 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
                     <div class="panel-body">
                         <div id="post_list">
+<<<<<<< HEAD
+=======
+
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
                         </div>
                     </div>
                 </div>
@@ -84,6 +126,14 @@ if (!isset($_SESSION['user_id'])) {
 </body>
 
 </html>
+<<<<<<< HEAD
 <?php
 include('connect/jquery_ajax.php');
+=======
+
+<?php
+
+include('connect/jquery_ajax.php');
+
+>>>>>>> b222b1be7e7f9610cd08d1c1f1f7b4c078855ccb
 ?>
