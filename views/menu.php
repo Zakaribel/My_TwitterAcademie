@@ -66,8 +66,8 @@
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user icon" aria-hidden="true"></i></a>
 				<ul class="dropdown-menu">
-					<li><a href="profile.php">Profil</a></li>
-					<li><a href="logout.php">Se déconnecter</a></li>
+					<li><a href="/views/profile.php">Profil</a></li>
+					<li><a href="/views/logout.php">Se déconnecter</a></li>
 				</ul>
 			</li>
 		</ul>

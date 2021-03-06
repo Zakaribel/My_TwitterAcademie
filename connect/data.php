@@ -109,7 +109,7 @@ if (isset($_POST['action'])) {
 				';
 			}
 		} else {
-			$output = '<h4>Aucun tweet trouvé</h4>';
+			$output = '<h4 style="color:red;">Aucun tweet trouvé</h4>';
 		}
 
 		echo $output;

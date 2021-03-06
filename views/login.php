@@ -1,7 +1,7 @@
 
 <?php
 
-include('./connect/functions.php');
+include('../connect/functions.php');
 
 session_start();
 
@@ -9,7 +9,7 @@ $message = '';
 
 if(isset($_SESSION['user_id']))
 {
-	header('location:./index.php');
+	header('location:../index.php');
 }
 
 if(isset($_POST["login"]))
@@ -34,7 +34,7 @@ if(isset($_POST["login"]))
 			{
 				$_SESSION['user_id'] = $row['id'];
 				$_SESSION['nickname'] = $row['nickname'];
-				header('location:index.php');
+				header('location:../index.php');
 			}
 			else
 			{

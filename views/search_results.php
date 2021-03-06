@@ -1,7 +1,7 @@
 <?php
 require_once '../connect/functions.php';
 session_start();
-if(isset($_GET['search'])){
+if(isset($_GET['search']) && $_GET['search'] !==''){
  // recherche htag/tweets
 	$data = [];
 	$data_tweet = [];
@@ -15,15 +15,15 @@ if(isset($_GET['search'])){
 // recherche utilisateurs 
     $query = "
     SELECT nickname FROM users
-    WHERE nickname LIKE '%" . $_GET['search'] . "%' 
-    AND users.id != '" . $_SESSION["user_id"] . "'
-    ";
+    WHERE nickname LIKE '%" . $_GET['search'] . "%'";
     $statement = $connect->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
     foreach ($result as $row) {
         $data[] = $row["nickname"];
     }
+}else{
+    header('location:../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ if(isset($_GET['search'])){
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="../css/dark.css" rel="stylesheet">
     <link href="../css/style1.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/dark.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
@@ -58,10 +58,10 @@ if(isset($_GET['search'])){
     <ul>
         <?php 
             if(empty($data_tweet)){
-                echo "0 tweet(s) pour: ". $_GET['search'];
+                echo "0 tweet(s) pour: " . $_GET['search'];
             }else {
                 foreach($data_tweet as $value){
-                    echo "<li>Tweet :" . $value . "</li>";
+                    echo "<li>Tweet : " . $value . "</li>";
                 }
             }
         ?>
@@ -71,20 +71,16 @@ if(isset($_GET['search'])){
     <ul>
         <?php 
             if(empty($data)){
-                echo "0 utilisateur(s) pour: ". $_GET['search'];
+                echo "0 utilisateur(s) pour: " . $_GET['search'];
             }else {
                 foreach($data as $value){
-                    echo '<li>Utilisateur : <a href="wall.php?data=' . $value . '">' . $value . '</a></li>';
+                    echo '<li>Utilisateur : <a href="user_tweets.php?data=' . $value . '">' . $value . '</a></li>';
                 }
             }
         ?>
         </ul>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
+        
         <script type="text/javascript" src="../js/sr.js"></script>
         <script type="text/javascript" src="../js/dark.js"></script>
 

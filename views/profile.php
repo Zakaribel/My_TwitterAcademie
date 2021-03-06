@@ -1,6 +1,6 @@
 <?php
 
-include('./connect/functions.php');
+include('../connect/functions.php');
 
 
 session_start();
@@ -66,8 +66,8 @@ $result = $statement->fetchAll();
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/style1.css">
-	<link rel="stylesheet" href="css/dark.css">
+	<link rel="stylesheet" href="../css/style1.css">
+	<link rel="stylesheet" href="../css/dark.css">
 </head>
 
 <body>
@@ -196,7 +196,8 @@ $result = $statement->fetchAll();
 					</div>
 				</div>
 				
-				<script src="./js/dark.js"></script>
+				<script src=".
+				./js/dark.js"></script>
 
 </body>
 

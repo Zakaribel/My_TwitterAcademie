@@ -84,8 +84,8 @@ function toMention($content)
 		$exploded = explode(' ', $content);
 		$countEx = count($exploded);
 		for ($i = 0; $i < $countEx; $i++) {
-			if ($exploded[$i] == '@') {
-				$exploded[$i] = "<a href='/views/search_results.php?data=".substr($exploded[$i],1)."'>" . $exploded[$i] . "</a>";
+			if (substr($exploded[$i], 0, 1) == '@') {
+				$exploded[$i] = "<a href='/views/user_tweets.php?data=".substr($exploded[$i],1)."'>" . $exploded[$i] . "</a>";
 			}
 		}
 

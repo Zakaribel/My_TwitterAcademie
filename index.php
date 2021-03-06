@@ -5,7 +5,7 @@ include('connect/functions.php');
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('location:login.php');
+    header('location:/views/login.php');
 }
 
 ?>

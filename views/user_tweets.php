@@ -156,7 +156,7 @@ $user_id = Get_user_id($connect, $_GET["data"]);
 				</div>
 			<?php
 			} else {
-				echo '<h3 align="center">Aucun tweet trouvé</h3>';
+				echo '<h3 style="text-align:center;color:red;">Aucun tweet trouvé</h3>';
 			}
 			?>
 		</div>
