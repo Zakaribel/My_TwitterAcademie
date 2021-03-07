@@ -1,7 +1,7 @@
 <script>
-    $(document).ready(function() {
+    $(document).ready(function() { // lorsque la page est chargée, j'effectue les instructions ci-dessous
 
-        $('#post_form').on('submit', function(event) {
+        $('#post_form').on('submit', function(event) {  
             event.preventDefault();
 
             if ($('#post_content').val() == '') {
@@ -16,7 +16,7 @@
                         $('#share_post').attr('disabled', 'disabled');
                     },
                     success: function(data) {
-                        $('#dynamic_field').html('<textarea name="post_content" id="post_content" maxlength="140" class="form-control" placeholder="Ecrivez ce que vous voulez"></textarea>');
+                        $('#dynamic_field').html('<textarea name="post_content" id="post_content" maxlength="140" class="form-control" placeholder="Quoi de neuf ?"></textarea>');
                         $('#post_type').val('text'); // le type de mon input
                         $('#post_form')[0].reset(); // formulaire reset
                         fetch_post();

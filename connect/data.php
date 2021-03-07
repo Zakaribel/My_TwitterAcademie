@@ -54,7 +54,7 @@ if (isset($_POST['action'])) {
 			$statement->execute();
 		}
 	}
-	if ($_POST['action'] == 'fetch_post') {
+	if ($_POST['action'] == 'fetch_post') {  // Récupération de mes posts (tweets)
 		$query = "
 		SELECT tweet.id as 'tweet_id', tweet.* , users.*  FROM tweet 
 		INNER JOIN users ON users.id = tweet.id_user  
@@ -112,7 +112,7 @@ if (isset($_POST['action'])) {
 
 		echo $output;
 	}
-	if ($_POST['action'] == 'fetch_user') {
+	if ($_POST['action'] == 'fetch_user') { // liste de mes utilisateurs
 		$query = "
 		SELECT * FROM users 
 		WHERE id != '" . $_SESSION["user_id"] . "' 
@@ -145,7 +145,7 @@ if (isset($_POST['action'])) {
 			echo $output;
 		}
 	}
-	if ($_POST['action'] == 'follow') {
+	if ($_POST['action'] == 'follow') { // Insertion de follow dans ma ddb
 		$query = "
 		INSERT INTO link_user_follower_user_following 
 		(id_follower,id_following) 
@@ -166,7 +166,7 @@ if (isset($_POST['action'])) {
 			$statement->execute();
 		}
 	}
-	if ($_POST['action'] == 'unfollow') {
+	if ($_POST['action'] == 'unfollow') {  // supression de follow dans ma ddb
 
 		$query = "
 		DELETE FROM link_user_follower_user_following  
@@ -192,7 +192,7 @@ if (isset($_POST['action'])) {
 			$statement->execute();
 		}
 	}
-	if ($_POST["action"] == 'submit_comment') {
+	if ($_POST["action"] == 'submit_comment') {  // envoi de commentaire sous un tweet
 		$comment_info = toHashtag($_POST['comment']);
 
 		$data = array(
@@ -233,7 +233,7 @@ if (isset($_POST['action'])) {
 			$statement->execute();
 		}
 	}
-	if ($_POST["action"] == "fetch_comment") {
+	if ($_POST["action"] == "fetch_comment") { // récuperation du commentaire
 		$query = "
 		SELECT * FROM comments 
 		INNER JOIN users 
@@ -263,7 +263,7 @@ if (isset($_POST['action'])) {
 		echo $output;
 	}
 
-	if ($_POST['action'] == 'retweet') {
+	if ($_POST['action'] == 'retweet') {			 // RETWEETS
 
 
 		$query = "
@@ -347,7 +347,7 @@ if (isset($_POST['action'])) {
 			}
 		}
 	}
-	if ($_POST["action"] == "like") {
+	if ($_POST["action"] == "like") { 			// LIKES
 		$query = "
 		SELECT * FROM likes 
 		WHERE id_tweet = '" . $_POST["tweet_id"] . "' 
@@ -400,7 +400,7 @@ if (isset($_POST['action'])) {
 			echo 'Like bien pris en compte';
 		}
 	}
-	if ($_POST["action"] == "like_user_list") {
+	if ($_POST["action"] == "like_user_list") { // récupération des noms des utilisateurs qui ont liké un post
 		$query = "
 		SELECT * FROM likes 
 		INNER JOIN users 

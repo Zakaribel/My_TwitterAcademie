@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 06 mars 2021 à 14:41
--- Version du serveur :  8.0.21
+-- Généré le : Dim 07 mars 2021 à 11:16
+-- Version du serveur :  8.0.22-0ubuntu0.20.04.3
 -- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `twitter`
+-- Base de données : `tweet-academy-bdd`
 --
 
 -- --------------------------------------------------------

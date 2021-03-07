@@ -76,7 +76,7 @@ $user_id = Get_user_id($connect, $_GET["data"]);
 									
 									<div class="col-md-10">
 										<h3><b>@<a href="/views/user_tweets.php?data=' . $row["nickname"] . '">' . $row["nickname"] . '</a></b></h3>
-										<p>' . $row["content"] . '<br /><br />
+										<p>' . toMention($row["content"]) . '<br /><br /> 
 										<button type="button" class="btn btn-link post_comment" id="' . $row["id"] . '" data-user_id="' . $row["id"] . '">' . count_comment($connect, $row["id"]) . ' Commentaires</button>
 										<button type="button" class="btn btn-danger repost" data-post_id="' . $row["id"] . '" ' . $repost . '><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;' . count_retweet($connect, $row["id"]) . '</button>
 										<button type="button" class="btn btn-link like_button" data-post_id="' . $row["id"] . '"><span class="glyphicon glyphicon-thumbs-up"></span> Like ' . count_total_post_like($connect, $row["id"]) . '</button>
